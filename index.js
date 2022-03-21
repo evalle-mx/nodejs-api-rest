@@ -12,6 +12,7 @@ const port = process.env.PORT || 3000;
 app
 .get("/", (req, res) => res.send('Hola Mundo'))
 .get("/welcome", (req, res) => res.send('<h1>Welcome to my app</h1>'));
+
 //using single index File
 // app.use(blogRouter);
 // app.use(postRouter);

@@ -21,8 +21,6 @@ exports.findAll = (req, res ) => {
     if(username){
         genericResponse.data = blogs.filter( blog => blog.username === username); 
     }
-
-
     return res.status(200).json(genericResponse).end();
 }
 //Function that receives params as URL path

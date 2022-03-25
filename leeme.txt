@@ -1,0 +1,8 @@
+
+
+# node 
+Workspace\NodeJS\api-rest> node index.js
+# nodemon
+Workspace\NodeJS\api-rest> npm run dev
+
+http://localhost:3000/

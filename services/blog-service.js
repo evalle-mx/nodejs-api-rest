@@ -6,7 +6,7 @@ const genericResponse  = {data:{}};
 //Receives queryParams
 //exports.findAll = (req, res ) => {
 exports.findAll = (username ) => {
-    genericResponse.data = blogs;
+    genericResponse.data = blogs;    
     if(username){
         genericResponse.data = blogs.filter( blog => blog.username === username); 
     }

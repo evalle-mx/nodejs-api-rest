@@ -7,7 +7,8 @@ const comments = [
     { id:3, content:"Me parecio interesante", likes:0, postId:2 },
 ];
 
-router.get("/comments", (req, res) => {
+//router.get("/comments", (req, res) => {
+router.get("/", (req, res) => {
     return res.status(200).json({
         items:comments
     }).end()

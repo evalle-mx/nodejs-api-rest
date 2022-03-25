@@ -6,3 +6,11 @@ Workspace\NodeJS\api-rest> node index.js
 Workspace\NodeJS\api-rest> npm run dev
 
 http://localhost:3000/
+
+http://localhost:3000/blogs?username=poncho
+http://localhost:3000/blogs/2
+
+http://localhost:3000/comments
+http://localhost:3000/posts
+
+

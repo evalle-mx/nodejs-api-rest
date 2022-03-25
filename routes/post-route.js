@@ -6,7 +6,8 @@ const posts = [
     { id:2, title:"Post Secundario", content:"Contenido del segundo Post", blogId:2 }
 ];
 
-router.get("/posts", (req, res) => {
+//router.get("/posts", (req, res) => {
+router.get("/", (req, res) => {
     return res.status(200).json({
         items:posts
     }).end()

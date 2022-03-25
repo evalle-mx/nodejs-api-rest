@@ -5,8 +5,10 @@ const { findAll, findById } = require('../controllers/blog-controller')
 
 /* Receive params through URL (No sensitive data)*/
 //by QueryString (?username=)
-router.get("/blogs", findAll )
+//router.get("/blogs", findAll )
+router.get("/", findAll )
 //Params /:param
-router.get("/blogs/:id", findById )
+//router.get("/blogs/:id", findById )
+router.get("/:id", findById )
 
 module.exports = router

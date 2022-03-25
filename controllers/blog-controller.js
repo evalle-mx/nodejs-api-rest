@@ -6,7 +6,7 @@ const blogs = [
     {id:2, title: "Blog 2", username:"admin"},
     {id:3, title: "Blog Poncho", username:"poncho"}
 ];  // */
-const { findAll, findById } = require("../services/blog-service")
+const { findAll, findById, createBlog } = require("../services/blog-service")
 
 /* Moved to blog-services.js 
 //Setting a Standard on the response
@@ -44,4 +44,10 @@ exports.findById = (req, res ) => {
     return res.status(200).json(genericResponse).end();*/
     const blog = findById(id);
     return res.status(200).json(blog).end();
-}  
+} 
+
+exports.createBlog = (req, res) => {
+    const { body } = req;
+    const response = createBlog(body);
+    return res.status(201).json(response).end();
+}

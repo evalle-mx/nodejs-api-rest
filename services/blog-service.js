@@ -21,3 +21,14 @@ exports.findById = ( id ) => {
     //return res.status(200).json(genericResponse).end();
     return genericResponse;
 } 
+exports.createBlog = ( blogInfo ) => {
+    // const newBlog = {  id: blogs.length+1, title=blogInfo.title, username=blogInfo.username }
+    const newBlog = {
+        id: blogs.length+1,
+        ...blogInfo
+    }
+    console.log('Adding new blog: ', newBlog );
+    blogs.push(newBlog);
+    genericResponse.data = newBlog;
+    return genericResponse;
+}

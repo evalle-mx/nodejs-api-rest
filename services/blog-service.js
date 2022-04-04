@@ -13,7 +13,8 @@ exports.findAll = async (username ) => {
     // return genericResponse;
     try {
         /*throw Error('Prueba_Error: Simulamos un error ')*/
-        return await BlogModel.find({username}).exec();
+        //return await BlogModel.find({username}).exec(); //Regresa Blog con atributos, pero objetos en arreglo solo el ID (Lazy)
+        return await BlogModel.find({username}).populate('posts').exec(); //Carga atributos de arreglo posts (Eager)
     } catch (error) {
         throw error;
     }
@@ -25,7 +26,8 @@ exports.findById = async ( id ) => {
     // genericResponse.data = blog;
     // return genericResponse;
     try {
-        return await BlogModel.findById(id).exec();
+        //return await BlogModel.findById(id).exec();//Regresa Blog con atributos, pero objetos en arreglo solo el ID/
+        return await BlogModel.findById(id).populate('posts').exec();//Carga atributos de arreglo posts (Eager)
     } catch (error) {
         throw error;
     }
@@ -56,7 +58,17 @@ exports.createBlog = async ( blogInfo ) => {
         // return genericResponse;
         return await newBlog.save();
     } catch (error) {
-        throw error;        
+        throw error;
     }
-    
+}
+
+//Funcion interna que se llama desde post-service al crear Post
+exports.addPost = async (blogId, post )=> {
+    try {
+        const blog =  await BlogModel.findById(blogId).exec();
+        blog.posts.push(post)
+        await blog.save();
+    } catch (error) {
+        throw error;
+    }
 }

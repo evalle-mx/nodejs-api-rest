@@ -13,4 +13,5 @@ http://localhost:3000/blogs/2
 http://localhost:3000/comments
 http://localhost:3000/posts
 
+$ npm install --save dotenv mongoose
 

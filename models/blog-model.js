@@ -5,7 +5,11 @@ const { Schema } = mongoose;
 const BlogSchema = new Schema ({
     title: {
         type: String, required:true
-    }
+    },
+    posts: [{
+        type:Schema.Types.ObjectId,
+        ref: 'Post'
+    }]
 },
 {
     timestamps:{

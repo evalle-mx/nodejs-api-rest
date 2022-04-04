@@ -1,8 +1,3 @@
-/*exports.posts = [
-    { id:1, title:"Post estatico Principal", content:"Contenido principal", blogId:1 },
-    { id:2, title:"Post estatico Secundario", content:"Contenido del segundo Post", blogId:2 }
-]; */
-
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 

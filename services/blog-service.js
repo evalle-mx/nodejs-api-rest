@@ -12,7 +12,7 @@ exports.findAll = async (username ) => {
     // }
     // return genericResponse;
     try {
-        throw Error('Prueba_Error: Simulamos un error ')
+        /*throw Error('Prueba_Error: Simulamos un error ')*/
         return await BlogModel.find({username}).exec();
     } catch (error) {
         throw error;

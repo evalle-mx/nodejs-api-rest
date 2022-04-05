@@ -15,3 +15,11 @@ http://localhost:3000/posts
 
 $ npm install --save dotenv mongoose
 
+
+commit 06a1a42ac3d14f2b5026c51c45c271f9c116eb1a => Simple integracion con MongoDB
+
+commit b09b738e6a5f4e58b82887f005353667a2fa66e9 => Funcional estatico
+
+
++________________________________ AUTHENTICATION   __________________
+$ npm install --save bcrypt

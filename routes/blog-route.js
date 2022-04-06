@@ -1,16 +1,10 @@
 const { Router } = require("express");
 const router = new Router();
 const url = require('url');
-const { findAll, findById, createBlog } = require('../controllers/blog-controller')
+const { findAll, findById, createBlog } = require('../controllers/blog-controller');
+// const { restrict } = require('../lib/middlewares/auth-middleware');
 
-/* Receive params through URL (No sensitive data)*/
-//by QueryString (?username=)
-//router.get("/blogs", findAll )
-//router.get("/", findAll )
-//Params /:param
-/* HTTP Method */
-//router.get("/blogs/:id", findById )
-
+// router.use(restrict); // las rutas a partir de este punto implementan la validacion restrict
 router.get("/:id", findById );
 router
     .get("/", findAll )

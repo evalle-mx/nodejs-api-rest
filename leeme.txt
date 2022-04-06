@@ -23,3 +23,10 @@ commit b09b738e6a5f4e58b82887f005353667a2fa66e9 => Funcional estatico
 
 +________________________________ AUTHENTICATION   __________________
 $ npm install --save bcrypt
+$ npm i -S jsonwebtoken
+
+JWT. JSON web Token is an open standartd that defines a compact and self-contained way for securely transmitting information between parties as a JSON object:
+
+Header.Information.signature [ xxxxx.yyyy.zzzzz]
+
+https://jwt.io/   

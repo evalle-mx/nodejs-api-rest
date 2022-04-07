@@ -1,4 +1,5 @@
 const BlogModel = require('../models/blog-model')
+const { mergeBlog } = require('../lib/utils')
 
 //Setting a Standard on the response
 // const genericResponse  = {data:{}};
@@ -57,6 +58,16 @@ exports.createBlog = async ( blogInfo ) => {
         // };
         // return genericResponse;
         return await newBlog.save();
+    } catch (error) {
+        throw error;
+    }
+}
+
+exports.updateBlog = async (blogId, blogInfo)  => {
+    try {
+        const blog = await BlogModel.findById(blogId).exec();
+        const blogPrepared = mergeBlog(blogInfo, blog ); //prepareModelForUpdate
+        return await blogPrepared.save();
     } catch (error) {
         throw error;
     }

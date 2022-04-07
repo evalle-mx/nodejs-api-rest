@@ -1,4 +1,4 @@
-const { signUp, signIn } = require('../services/user-service');
+const { signUp, signIn, logout } = require('../services/user-service');
 const { prepareResponse } = require('../lib/utils');
 
 exports.signUp = async (req, res, next )=>{
@@ -24,5 +24,18 @@ exports.login = async (req, res, next ) => {
             .end()
     } catch (error) {
         next(error);
+    }
+}
+
+exports.signOut = async (req, res, next ) => {
+    try {
+        const { currentUser } = req;
+        const { message } = await logout(currentUser);
+        res
+            .status(200)
+            .json( prepareResponse(message, message))
+            .end();
+    } catch (err) {
+        next(err)
     }
 }

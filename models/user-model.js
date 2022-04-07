@@ -17,6 +17,11 @@ const UserSchema = new Schema(
         password:{
             type:String,
             required:true
+        },
+        expirationDate : {
+            type: Number,
+            required: true,
+            default: new Date().getTime() / 1000
         }
     },
     {
@@ -32,13 +37,18 @@ UserSchema.methods.toJSON = function() {
     const user = this;
     return {
         ...user._doc,
-        password:undefined
+        password:undefined,
+        expirationDate:undefined
     }
 }
 //Metodo para generar el token de autorizacion
 UserSchema.methods.generateAuthToken = async function () {
     const user = this;
-    return jwt.sign({_id:user._id}, process.env.SECRET_KEY, { expiresIn:'4 hours' })
+    const token = jwt.sign({_id:user._id}, process.env.SECRET_KEY, { expiresIn:'4 hours' })
+    const infoDecoded = jwt.decode(token);
+    user.expirationDate = infoDecoded.exp;
+    await user.save()
+    return token;
 }
 
 //Declara funcion PREvia al evento salvar, 

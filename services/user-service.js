@@ -29,3 +29,14 @@ exports.signIn = async({email, password }) => {
         throw new Error('Datos invalidos'); //Para evitar enviar informacion sensible que pueda ser hackeada
     }
 }
+
+exports.logout = async (user ) => {
+    try {
+        user.expirationDate = Math.floor( new Date().getTime() /1000) //Redondea al segundo anterior al actual
+        await user.save();
+        return {message: 'Sesion cerrada exitosamente '};
+    } catch (err) {
+        console.error(err);
+        throw new Error('Error en la sesion')
+    }
+}

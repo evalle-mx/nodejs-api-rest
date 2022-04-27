@@ -33,4 +33,4 @@ BlogSchema.pre('save', function(next){
     }
 })
 
-module.exports = mongoose.model('Blog', BlogSchema);
+module.exports = mongoose.model('Blog', BlogSchema);  //Mongoose automatically changes this to the plural form, transforms it to lowercase, and uses that for the database collection name.

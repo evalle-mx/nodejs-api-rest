@@ -1,4 +1,8 @@
-
+#########################################################################################
+#  Codentine inc: API REST con NodeJs
+#  https://www.youtube.com/watch?v=uO3d_xH3xgc
+#  MongoDB + Mongoose + Node.js: Connecting & CRUD Operations 
+#########################################################################################
 
 # node 
 Workspace\NodeJS\api-rest> node index.js

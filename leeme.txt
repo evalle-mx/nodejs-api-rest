@@ -4,8 +4,17 @@
 #  MongoDB + Mongoose + Node.js: Connecting & CRUD Operations 
 #########################################################################################
 
+
+
+
 # node 
 Workspace\NodeJS\api-rest> node index.js
+
+$ npm init
+
+$ npm install --save express 
+$ npm i nodemon
+
 # nodemon
 Workspace\NodeJS\api-rest> npm run dev
 

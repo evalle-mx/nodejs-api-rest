@@ -1,22 +1,24 @@
 #########################################################################################
-#  Codentine inc: API REST con NodeJs
+#  Codentine inc: API REST con NodeJs (Espanol)
 #  https://www.youtube.com/watch?v=uO3d_xH3xgc
 #  MongoDB + Mongoose + Node.js: Connecting & CRUD Operations 
 #########################################################################################
 
 
 
-
-# node 
+### RUN ###
+Workspace\NodeJS\api-rest> npm run dev
 Workspace\NodeJS\api-rest> node index.js
 
-$ npm init
 
+#### Install ###
+$ npm init
 $ npm install --save express 
 $ npm i nodemon
 
-# nodemon
-Workspace\NodeJS\api-rest> npm run dev
+
+#Test with Postman 
+(crear Token )
 
 http://localhost:3000/
 
@@ -34,7 +36,10 @@ commit 06a1a42ac3d14f2b5026c51c45c271f9c116eb1a => Simple integracion con MongoD
 commit b09b738e6a5f4e58b82887f005353667a2fa66e9 => Funcional estatico
 
 
-+________________________________ AUTHENTICATION   __________________
+# Refresh dependencies
+$ npm install
+
++________________________________ AUTHENTICATION   __________________ (Deactivate commenting 'restrict' in main-routes)
 $ npm install --save bcrypt
 $ npm i -S jsonwebtoken
 

@@ -4,13 +4,17 @@
   "description": "API rest with MongoDB",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Evalle",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.3"
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.3.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

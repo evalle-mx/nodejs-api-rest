@@ -16,8 +16,7 @@ const BlogSchema = new Schema ({
     timestamps:{
         createdAt:'createdAt', updatedAt:'updatedAt'
     }
-}
-)
+})
 
 BlogSchema.pre('save', function(next){
     const blog = this;
